@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Add Landlord</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- left side and navigation start here -->
+      <div class="navigation">
+        <ul>
+          <!-- brand section start-->
+          <li>
+            <a href="admin_dashboard.html">
+              <!-- <span class="icon"><ion-icon name  ="home"></ion-icon></span> -->
+              <span class="title logo">AdProperty</span>
+            </a>
+          </li>
+          <!-- brand section end  -->
+          <li class="hovered">
+            <a href="admin_dashboard.html">
+              <span class="icon"><ion-icon name="home"></ion-icon></span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="add_landlord.html">
+              <span class="icon"><ion-icon name="people"></ion-icon></span>
+              <span class="title">Add Landlord</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="setting.html">
+              <span class="icon"><ion-icon name="settings"></ion-icon></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- main section start here -->
+      <div class="main">
+        <!-- topbar start -->
+        <div class="topbar">
+          <!-- menu -->
+          <div class="toggle">
+            <ion-icon name="menu"></ion-icon>
+          </div>
+
+          <!-- user -->
+          <div class="user">
+            <img src="./img/img5.jpg" alt="user-img" />
+          </div>
+        </div>
+
+        <!-- Add Landlord form -->
+        <div class="details">
+          <div class="add-landlord-form">
+            <h2>Add Landlord</h2>
+            <form action="#" method="POST" class="landlord-form">
+              <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" />
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" />
+              </div>
+              <div class="form-group">
+                <button type="submit">Add Landlord</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Add Landlord form end -->
+      </div>
+      <!-- main section end here -->
+    </div>
+
+    <!-- ionicons cdn   -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- custom script  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Dashborad</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- left side and navigation start here -->
+      <div class="navigation">
+        <ul>
+          <!-- brand section start-->
+          <li>
+            <a href="admin_dashboard.html">
+              <span class="title logo">ADPROPERTY</span>
+            </a>
+          </li>
+          <!-- brand section end  -->
+          <li class="hovered">
+            <a href="admin_dashboard.html">
+              <span class="icon"><ion-icon name="home"></ion-icon></span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="add_landlord.html">
+              <span class="icon"><ion-icon name="people"></ion-icon></span>
+              <span class="title">Add Landlord</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="setting.html">
+              <span class="icon"><ion-icon name="settings"></ion-icon></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- main section start here -->
+      <div class="main">
+        <!-- topbar start -->
+        <div class="topbar">
+          <!-- menu -->
+          <div class="toggle">
+            <ion-icon name="menu"></ion-icon>
+          </div>
+          <!-- search -->
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Search..." />
+              <ion-icon name="search"></ion-icon>
+            </label>
+          </div>
+          <!-- user -->
+          <div class="user">
+            <img src="./img/img5.jpg" alt="user-img" />
+          </div>
+        </div>
+
+        <!-- order details list start  -->
+        <div class="details">
+          <div class="recentorders">
+            <div class="cardheader">
+              <h2>Landlords</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>ID</td>
+                  <td>Name</td>
+                  <td>Email</td>
+                  <td>Contact Number</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>John Doe</td>
+                  <td>john@example.com</td>
+                  <td>123-456-7890</td>
+                  <td>
+                    <button
+                      style="
+                        margin-right: 5px;
+                        background-color: green;
+                        color: #fff;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 12px;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </button>
+                    <button
+                      style="
+                        background-color: #f00;
+                        color: #fff;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 8px 12px;
+                        cursor: pointer;
+                      "
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+                <!-- Add more rows for additional landlords -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- order details list end  -->
+      </div>
+      <!-- main section end here -->
+    </div>
+
+    <!-- ionicons cdn   -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- custom script  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  /* --blue: #287bff; */
+  --blue: #7b6ce9;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+}
+
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-top: 10px;
+}
+
+.navigation ul li.hovered,
+.navigation ul li:hover {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navigation ul li.hovered a,
+.navigation ul li:hover a {
+  color: var(--blue);
+}
+
+.navigation.active ul li a .title {
+  display: none;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75em;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.navigation ul li.hovered a::before,
+.navigation ul li:hover a::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -50px;
+  right: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px 35px 0 10px var(--white);
+}
+
+.navigation ul li.hovered a::after,
+.navigation ul li:hover a::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: -50px;
+  right: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px -35px 0 10px var(--white);
+}
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  width: 100%;
+  height: 60px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 2.5em;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 20px;
+  border-radius: 40px;
+  outline: none;
+  border: 1px solid var(--black2);
+  font-size: 18px;
+  padding-left: 35px;
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.user {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.details .recentorders {
+  min-height: 500px;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.details .cardheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.details .cardheader h2 {
+  font-weight: 600;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.details table thead td {
+  font-weight: 600;
+}
+
+.details .recentorders table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentorders table tr:last-child {
+  border-bottom: none;
+}
+
+.details .recentorders table tr:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.details .recentorders table tr td {
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.details .recentorders table tr td:last-child {
+  text-align: end;
+}
+
+.details .recentorders table tr td:nth-child(2) {
+  text-align: end;
+}
+
+.details .recentorders table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.status {
+  padding: 2px 4px;
+  background-color: #8de02c;
+  color: var(--white);
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.status.pending {
+  background-color: #f9ca3f;
+}
+
+/* Add Landlord form styling */
+.add-landlord-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
+
+.add-landlord-form h2 {
+  color: #287bff;
+  margin-bottom: 20px;
+}
+
+.landlord-form .form-group {
+  margin-bottom: 15px;
+  /* width: 500px; */
+}
+
+.landlord-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.landlord-form input[type="text"],
+.landlord-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.landlord-form button[type="submit"] {
+  background-color: #287bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.landlord-form button[type="submit"]:hover {
+  background-color: #1e63e9;
+}
+
+/* Settings page styling */
+
+.settings-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.settings-form h2 {
+  color: #287bff;
+  margin-bottom: 20px;
+}
+
+.settings-form .form-group {
+  margin-bottom: 15px;
+}
+
+.settings-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="password"],
+.settings-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.settings-form button[type="submit"] {
+  background-color: #287bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.settings-form button[type="submit"]:hover {
+  background-color: #1e63e9;
+}
+
+.user-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 5%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  cursor: pointer;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.edit-icon ion-icon {
+  font-size: 1.2em;
+}
